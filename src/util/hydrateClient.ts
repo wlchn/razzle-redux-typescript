@@ -7,7 +7,7 @@ import hydrate from '../core/hydrate';
 export default <State = any, Action extends AnyAction = any>(
   rootReducer: ReducersMapObject<State, Action>,
   routes: RouteConfig,
-  transitToJSON = null,
+  transitToJSON: any = null,
 ): Promise<any> => {
   const transit = transitToJSON ? transitToJSON : JSON.parse;
   const initialState: State = transit(

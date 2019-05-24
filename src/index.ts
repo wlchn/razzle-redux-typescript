@@ -1,4 +1,3 @@
-export { default as actionToPlainObject } from './core/actionToPlainObject';
 export { default as configureFound } from './core/configureFound';
 export { default as createStore, store } from './core/createStore';
 export { default as hydrate } from './core/hydrate';

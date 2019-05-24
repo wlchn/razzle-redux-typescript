@@ -2,6 +2,12 @@
 
 Bootstrap Razzle full SRR React App with Redux and TypeScript
 
-# Usage
+## Install
 
-check the example
+```
+mpm i @wlchn/razzle-redux-typescript
+```
+
+## example
+
+https://github.com/wlchn/razzle-redux-typescript-example

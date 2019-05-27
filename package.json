@@ -1,6 +1,6 @@
 {
   "name": "@wlchn/razzle-redux-typescript",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Bootstrap a full SRR React App with Redux and Typescript",
   "author": "wlchn",
   "license": "MIT",
@@ -17,8 +17,8 @@
     "test:watch": "react-scripts-ts test --env=jsdom",
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "prepare": "yarn run build",
-    "predeploy": "cd example && yarn install && yarn run build",
+    "prepare": "npm run build",
+    "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build"
   },
   "dependencies": {
@@ -30,7 +30,6 @@
     "react-dom": "^16.8.6",
     "react-redux": "5",
     "redux": "^4.0.1",
-    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0"
   },
   "peerDependencies": {
@@ -41,8 +40,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-redux": "5",
-    "redux": "^4.0.1",
-    "redux-logger": "^3.0.6"
+    "redux": "^4.0.1"
   },
   "devDependencies": {
     "@svgr/rollup": "^4.1.0",

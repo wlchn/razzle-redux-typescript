@@ -8,7 +8,7 @@ import {
   createStore,
   Reducer,
   ReducersMapObject,
-  Store,
+  Store
 } from 'redux';
 
 import OutputAction from './OutputAction';
@@ -44,7 +44,7 @@ export default <State = any, Action extends AnyAction = any>({
   initialState,
   req,
   rootReducer,
-  routes,
+  routes
 }: CreateStoreArg<State>): CreateStoreOutput<State, Action> => {
   const farceProtocol = !!req ? new farce.ServerProtocol(req.url) : new farce.BrowserProtocol();
 
@@ -52,7 +52,7 @@ export default <State = any, Action extends AnyAction = any>({
   const reduxMiddleware = applyMiddleware(thunk);
   const combinedReducers = combineReducers({
     found: found.reducer as Reducer<any, OutputAction<Action>>,
-    ...rootReducer,
+    ...rootReducer
   });
 
   const storeCreated: Store<OutputState<State>, OutputAction<Action>> = createStore(
@@ -60,8 +60,8 @@ export default <State = any, Action extends AnyAction = any>({
     initialState,
     compose(
       reduxMiddleware,
-      ...found.storeEnhancers,
-    ),
+      ...found.storeEnhancers
+    )
   );
 
   store = storeCreated;

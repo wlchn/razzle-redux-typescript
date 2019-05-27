@@ -13,6 +13,7 @@ export default function<State = any, Action extends AnyAction = any, DocumentExt
   rootReducer,
   routes,
   document,
+  callback,
 }: {
   initialState: State;
   razzleAssets: any;
@@ -22,6 +23,7 @@ export default function<State = any, Action extends AnyAction = any, DocumentExt
     Component: React.ComponentType<DocumentProps & DocumentExtraProps>;
     props: DocumentExtraProps;
   };
+  callback: any;
 }) {
   return async (req: Request, res: Response) => {
     const storeArg = {
@@ -32,6 +34,10 @@ export default function<State = any, Action extends AnyAction = any, DocumentExt
     };
 
     const { found, store } = createStore<State, Action>(storeArg);
+
+    if (callback) {
+      await callback(store);
+    }
 
     try {
       const { html } = await renderToString({ found, store });

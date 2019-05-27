@@ -9,7 +9,7 @@ import { createRouterRender } from './Root';
 
 export default async function<State = any>({
   found,
-  store,
+  store
 }: {
   found: any;
   store: Store<State>;
@@ -22,7 +22,7 @@ export default async function<State = any>({
         <foundServer.RouterProvider router={renderArgs.router}>
           {createRouterRender(renderArgs)}
         </foundServer.RouterProvider>
-      </Provider>,
-    ),
+      </Provider>
+    )
   };
 }

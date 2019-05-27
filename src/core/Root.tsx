@@ -43,14 +43,14 @@ export const createRouterRender = (renderArgs: any) => {
           <found.ElementsRenderer elements={elements} />
         </StaticContainer>
       </div>
-    ),
+    )
   })(renderArgs);
 };
 
 const ConnectedRouter = found.createConnectedRouter({
   render: (renderArgs: object) => (
     <foundScroll.ScrollManager renderArgs={renderArgs}>{createRouterRender(renderArgs)}</foundScroll.ScrollManager>
-  ),
+  )
 });
 
 interface RootProps<State extends any> {

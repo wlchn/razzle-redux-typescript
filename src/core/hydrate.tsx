@@ -7,7 +7,7 @@ import { render } from 'react-dom';
 export default function<State = any>({
   element,
   found,
-  store,
+  store
 }: {
   element: HTMLElement;
   found: any;

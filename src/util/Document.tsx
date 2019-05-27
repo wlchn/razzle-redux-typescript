@@ -12,7 +12,7 @@ class Document extends React.Component<DocumentProps> {
       assets,
       html,
       // helmet,
-      initialState,
+      initialState
     } = this.props;
     // get attributes from React Helmet
     // const htmlAttrs = helmet.htmlAttributes.toComponent();
@@ -39,14 +39,14 @@ class Document extends React.Component<DocumentProps> {
           <div
             id="root"
             dangerouslySetInnerHTML={{
-              __html: html,
+              __html: html
             }}
           />
           <script
             id="server-app-state"
             type="application/json"
             dangerouslySetInnerHTML={{
-              __html: JSON.stringify({ initialState }),
+              __html: JSON.stringify({ initialState })
             }}
           />
           <script type="text/javascript" src={assets.client.js} defer={true} crossOrigin="anonymous" />

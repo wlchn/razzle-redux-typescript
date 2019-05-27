@@ -9,7 +9,7 @@ enum FarceActionType {
   CREATE_HREF = '@@farce/CREATE_HREF',
   CREATE_LOCATION = '@@farce/CREATE_LOCATION',
   UPDATE_LOCATION = '@@farce/UPDATE_LOCATION',
-  DISPOSE = '@@farce/DISPOSE',
+  DISPOSE = '@@farce/DISPOSE'
 }
 
 interface FarceAction extends AnyAction {

@@ -7,12 +7,12 @@ import hydrate from '../core/hydrate';
 export default <State = any, Action extends AnyAction = any>(
   rootReducer: ReducersMapObject<State, Action>,
   routes: RouteConfig,
-  transitToJSON: any,
+  transitToJSON: any
 ): Promise<any> => {
   const transit = transitToJSON ? transitToJSON : JSON.parse;
   const initialState: State = transit(
     // param for the server state location
-    (document.getElementById('server-app-state') || { textContent: '{}' }).textContent || '{}',
+    (document.getElementById('server-app-state') || { textContent: '{}' }).textContent || '{}'
   ).initialState;
 
   // param for mounting location of react nodes
@@ -21,7 +21,7 @@ export default <State = any, Action extends AnyAction = any>(
   const { found, store } = createStore<State, Action>({
     initialState,
     rootReducer,
-    routes,
+    routes
   });
 
   if (element) {

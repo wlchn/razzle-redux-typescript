@@ -22,7 +22,7 @@ const configureFound = (routeConfig: RouteConfig, historyProtocol: any): FoundCo
     const renderArgs = await found.getStoreRenderArgs({
       matchContext: { store },
       resolver: found.resolver,
-      store,
+      store
     });
     return renderArgs;
   };
@@ -34,7 +34,7 @@ const configureFound = (routeConfig: RouteConfig, historyProtocol: any): FoundCo
 
   const historyEnhancer = createHistoryEnhancer({
     middlewares: [queryMiddleware],
-    protocol: historyProtocol,
+    protocol: historyProtocol
   });
 
   const storeEnhancers = [historyEnhancer, found.createMatchEnhancer(matcher)];
@@ -43,7 +43,7 @@ const configureFound = (routeConfig: RouteConfig, historyProtocol: any): FoundCo
     getRenderArgs,
     reducer: found.foundReducer,
     replaceRouteConfig,
-    storeEnhancers,
+    storeEnhancers
   };
 };
 

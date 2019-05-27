@@ -13,7 +13,7 @@ export default function<State = any, Action extends AnyAction = any, DocumentExt
   rootReducer,
   routes,
   document,
-  callback,
+  callback
 }: {
   initialState: State;
   razzleAssets: any;
@@ -30,7 +30,7 @@ export default function<State = any, Action extends AnyAction = any, DocumentExt
       initialState,
       req,
       rootReducer,
-      routes,
+      routes
     };
 
     const { found, store } = createStore<State, Action>(storeArg);
@@ -44,7 +44,7 @@ export default function<State = any, Action extends AnyAction = any, DocumentExt
       const documentProps = {
         assets: razzleAssets,
         html,
-        initialState: store.getState(),
+        initialState: store.getState()
       };
 
       const component = document ? (

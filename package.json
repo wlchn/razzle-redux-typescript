@@ -1,6 +1,6 @@
 {
   "name": "@wlchn/razzle-redux-typescript",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Bootstrap a full SRR React App with Redux and Typescript",
   "author": "wlchn",
   "license": "MIT",
@@ -34,13 +34,14 @@
   },
   "peerDependencies": {
     "express": "^4.16.4",
-    "farce": "^0.2.6",
-    "found": "0.3",
-    "found-scroll": "^0.1.5",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
+    "farce": "^0.2.8",
+    "found": "^0.3.21",
+    "found-scroll": "^0.1.6",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-redux": "5",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@svgr/rollup": "^4.1.0",

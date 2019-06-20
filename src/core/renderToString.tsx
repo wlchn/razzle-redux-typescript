@@ -15,7 +15,6 @@ export default async function<State = any>({
   store: Store<State>;
 }): Promise<{ html: string }> {
   const renderArgs = await found.getRenderArgs(store);
-
   return {
     html: renderToString(
       <Provider store={store}>

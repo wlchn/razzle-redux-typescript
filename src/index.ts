@@ -8,4 +8,4 @@ export { default as Root } from './core/Root';
 
 export { default as hydrateClient } from './util/hydrateClient';
 export { default as createServer } from './util/createServer';
-export { default as Document, DocumentProps } from './util/Document';
+export { DocumentProps } from './util/Document';

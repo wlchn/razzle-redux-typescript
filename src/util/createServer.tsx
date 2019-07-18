@@ -5,7 +5,7 @@ import { AnyAction, ReducersMapObject } from 'redux';
 
 import createStore from '../core/createStore';
 import renderToString from '../core/renderToString';
-import DefaultDocument, { DocumentProps } from './Document';
+import { DocumentProps } from './Document';
 
 export default function<State = any, Action extends AnyAction = any, DocumentExtraProps = undefined>({
   initialState,
@@ -13,17 +13,19 @@ export default function<State = any, Action extends AnyAction = any, DocumentExt
   rootReducer,
   routes,
   document,
-  afterCreateStore
+  afterCreateStore,
+  showErrorLogs
 }: {
   initialState: State;
   razzleAssets: any;
   rootReducer: ReducersMapObject<State, Action>;
   routes: any;
-  document?: {
+  document: {
     Component: React.ComponentType<DocumentProps & DocumentExtraProps>;
     props: DocumentExtraProps;
   };
   afterCreateStore: any;
+  showErrorLogs: boolean;
 }) {
   return async (req: Request, res: Response) => {
     const storeArg = {
@@ -47,16 +49,15 @@ export default function<State = any, Action extends AnyAction = any, DocumentExt
         initialState: store.getState()
       };
 
-      const component = document ? (
-        <document.Component {...{ ...document.props, ...documentProps }} />
-      ) : (
-        <DefaultDocument {...documentProps} />
-      );
+      const component = <document.Component {...{ ...document.props, ...documentProps }} />;
+
       const staticMarkup = renderToStaticMarkup(component);
 
       res.send(staticMarkup);
     } catch (error) {
-      console.error(error);
+      if (showErrorLogs) {
+        console.error(error);
+      }
 
       res.status(500).send(error.message);
     }

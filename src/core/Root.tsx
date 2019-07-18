@@ -34,7 +34,6 @@ export const createRouterRender = (renderArgs: any) => {
     renderPending: () => (
       <div>
         <StaticContainer>{null}</StaticContainer>
-        {'loading bar'}
       </div>
     ),
     renderReady: ({ elements }: { elements: React.ReactElement<any> }) => (

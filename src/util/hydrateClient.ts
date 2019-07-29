@@ -19,6 +19,10 @@ export default <State = any, Action extends AnyAction = any>(
   // param for mounting location of react nodes
   const element = document.getElementById('root');
 
+  if (!element) {
+    throw Error('The mouting point for the application could not be found. DOM element: #root');
+  }
+
   const { found, store } = createStore<State, Action>({
     initialState,
     rootReducer,
@@ -29,8 +33,5 @@ export default <State = any, Action extends AnyAction = any>(
     afterCreateStore(store);
   }
 
-  if (element) {
-    return hydrate({ element, found, store });
-  }
-  throw Error('The mouting point for the application could not be found. DOM element: #root');
+  return hydrate({ element, found, store });
 };

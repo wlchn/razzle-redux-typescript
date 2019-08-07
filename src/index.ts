@@ -1,5 +1,5 @@
 export { default as configureFound } from './core/configureFound';
-export { default as createStore, store } from './core/createStore';
+export { default as createStore } from './core/createStore';
 export { default as hydrate } from './core/hydrate';
 export { default as OutputAction } from './core/OutputAction';
 export { default as OutputState } from './core/OutputState';

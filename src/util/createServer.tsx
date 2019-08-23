@@ -51,7 +51,7 @@ export default function<State = any, Action extends AnyAction = any, DocumentExt
 
       const component = <document.Component {...{ ...document.props, ...documentProps }} />;
 
-      const staticMarkup = renderToStaticMarkup(component);
+      const staticMarkup = '<!DOCTYPE html>' + renderToStaticMarkup(component);
 
       res.send(staticMarkup);
     } catch (error) {

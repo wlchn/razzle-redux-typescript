@@ -38,7 +38,7 @@ export default function<State = any, Action extends AnyAction = any, DocumentExt
     const { found, store } = createStore<State, Action>(storeArg);
 
     if (afterCreateStore) {
-      await afterCreateStore(store);
+      await afterCreateStore(store, req, res);
     }
 
     try {

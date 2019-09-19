@@ -1,11 +1,11 @@
 # razzle-redux-typescript
 
-Bootstrap Razzle full SRR React App with Redux and TypeScript
+Bootstrap Razzle full SRR React App with Redux, Redux-Thunk, Found, TypeScript.
 
 ## Installation
 
 ```
-mpm i @wlchn/razzle-redux-typescript
+mpm i razzle-redux-typescript
 ```
 
 ## Example

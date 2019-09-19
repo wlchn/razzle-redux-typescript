@@ -1,7 +1,7 @@
 {
   "name": "razzle-redux-typescript",
-  "version": "0.1.0",
-  "description": "Bootstrap a full SRR React App with Redux and Typescript",
+  "version": "0.1.1",
+  "description": "Bootstrap a full Server Side Rendering(SSR) React App with Redux and Typescript",
   "author": "wlchn",
   "license": "MIT",
   "repository": "wlchn/razzle-redux-typescript",
